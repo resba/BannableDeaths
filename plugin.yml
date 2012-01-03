@@ -1,0 +1,17 @@
+name: DeathBan
+main: com.resbah.DeathBan.DeathBan
+version: 0.1 by resba
+commands:
+    dbunban:
+        description: Hardcode Unban
+        usage: /dbunban [user]
+permissions:
+    DeathBan.*:
+        description: Allows access to all commands
+        children:
+            DeathBan.bypass:
+                description: If true, allows user to bypass Ban on Death
+                default: false
+            DeathBan.unban:
+                description: If true, allows user to use /dbunban
+                default: false
