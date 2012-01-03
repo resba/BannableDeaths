@@ -16,7 +16,7 @@ public class DeathBanEntityListener extends EntityListener {
 	public void onEntityDeath(EntityDeathEvent event) {
 		if(event.getEntity() instanceof Player){
 			Player player = (Player) event.getEntity();
-			if(player.hasPermission("DeathBan.bypass")){
+			if(player.hasPermission("BannableDeaths.bypass")){
 			plugin.getServer().broadcastMessage(player.getName() + " has died, but is immortal, therefore shall not be banned!");
 			}else{
 			plugin.getServer().broadcastMessage(ChatColor.RED + "Whoops! Looks like " + player.getName() + " died by " + player.getLastDamageCause().getCause());

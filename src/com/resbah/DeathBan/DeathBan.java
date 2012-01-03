@@ -12,21 +12,21 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DeathBan extends JavaPlugin {
 	Logger log = Logger.getLogger("Minecraft");
 	public void onEnable(){
-		log.info("DeathBan by resba has been Enabled");
+		log.info("BannableDeaths by resba has been Enabled");
 		PluginManager pm = this.getServer().getPluginManager();
 		pm.registerEvent(Event.Type.ENTITY_DEATH, entityListener, Event.Priority.Normal, this);
 		this.getConfig().getDefaults();
 	}
 	 
 	public void onDisable(){ 
-		log.info("DeathBan has been Disabled");
+		log.info("BannableDeaths has been Disabled");
 		this.saveConfig();
 		this.reloadConfig();
 	}
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("dbunban")){
+		if (cmd.getName().equalsIgnoreCase("bdunban")){
 			if(args.length == 1){
-				if(sender.hasPermission("DeathBan.unban")){
+				if(sender.hasPermission("BannableDeaths.unban")){
 				Bukkit.getOfflinePlayer(args[0]).setBanned(false);
 				sender.sendMessage("Player Unbanned.");
 				return true;
